@@ -50,13 +50,13 @@ export const AiStylist: React.FC<AiStylistProps> = ({ isOpen, onClose }) => {
           {messages.map((msg, idx) => (
             <div
               key={idx}
-              className={`flex ${msg.role === 'user' ? 'justify-start' : 'justify-end'}`}
+              className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
             >
               <div
                 className={`max-w-[80%] p-3 rounded-2xl text-sm leading-6 ${
                   msg.role === 'user'
-                    ? 'bg-zinc-800 text-zinc-200 rounded-tr-none'
-                    : 'bg-purple-600 text-white rounded-tl-none'
+                    ? 'bg-purple-600 text-white rounded-tl-none'
+                    : 'bg-zinc-800 text-zinc-200 rounded-tr-none'
                 }`}
               >
                 {msg.text}
@@ -64,10 +64,10 @@ export const AiStylist: React.FC<AiStylistProps> = ({ isOpen, onClose }) => {
             </div>
           ))}
           {loading && (
-            <div className="flex justify-end">
-              <div className="bg-purple-600/50 p-3 rounded-2xl rounded-tl-none flex items-center gap-2">
-                <Loader2 className="animate-spin text-white" size={16} />
-                <span className="text-xs text-white">در حال تایپ...</span>
+            <div className="flex justify-start">
+              <div className="bg-zinc-800 p-3 rounded-2xl rounded-tr-none flex items-center gap-2">
+                <Loader2 className="animate-spin text-purple-500" size={16} />
+                <span className="text-xs text-zinc-400">در حال تحلیل سلیقه شما...</span>
               </div>
             </div>
           )}
